@@ -1,0 +1,34 @@
+<ul id="nav">
+  <% @topics.each do |topic| %>
+    <%= content_tag :li, class: (topic == @topic ? 'active' : nil) do %>
+      <%= link_to topic.name, topic_questions_path(topic) %>
+    <% end %>
+  <% end %>
+</ul>
+
+<% @questions.each do |question| %>
+  <div class="question">
+    <h1><%= question.name %></h1>
+    <form>
+      <ol>
+        <% question.answers.each do |answer| %>
+          <li>
+            <input
+              id="answer_<%= answer.id %>"
+              name="question_1"
+              value="<%= answer.is_correct %>"
+              type="radio">
+            <label for="answer_<%= answer.id %>"><%== answer.name %></label>
+          </li>
+        <% end %>
+      </ol>
+      <input type="submit" value="Svar" title="V&aelig;lg svar f&oslash;rst">
+    </form>
+
+    <% if not question.information.blank? %>
+      <a href="#">L&aelig;s mere</a>
+      <div class="information"><%= question.information %></div>
+    <% end %>
+
+  </div>
+<% end %>

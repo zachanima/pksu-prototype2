@@ -1,0 +1,28 @@
+<%= form_for([@topic, @question]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :information %><br />
+    <%= f.text_area :information %>
+  </div>
+
+  <div class="field">
+    <fieldset>
+      <legend>Answers</legend>
+      <%= f.fields_for :answers, @question.answers do |a| %>
+        <%= a.label :name %>
+        <%= a.text_field :name %>
+        <%= a.check_box :is_correct %>
+        <%= a.label :is_correct %><br>
+      <% end %>
+    </fieldset>
+  </div>
+  <div class="actions">
+    <%= f.hidden_field :topic_id %>
+    <%= f.submit %>
+  </div>
+<% end %>
