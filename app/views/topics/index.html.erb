@@ -9,7 +9,7 @@
 
 <% @topics.each do |topic| %>
   <tr>
-    <td><%= link_to topic.name, edit_topic_path(topic), title: 'Edit topic' %></td>
+    <td><%= link_to topic.name, edit_topic_path(topic), title: 'Edit topic' %> (<%= link_to 'Show', topic_questions_path(topic) %>)</td>
     <td>
       <%= link_to 'New question ...', new_topic_question_path(topic) %><br>
       <% topic.questions.each do |question| %>
