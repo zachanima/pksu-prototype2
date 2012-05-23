@@ -8,17 +8,18 @@
 
 <% @questions.each do |question| %>
   <div class="question">
-    <h1><%= question.name %></h1>
     <form>
+      <h1><%= question.name %></h1>
       <ol>
         <% question.answers.each do |answer| %>
           <li>
             <input
               id="answer_<%= answer.id %>"
               name="question_1"
-              value="<%= answer.is_correct %>"
               type="radio">
-            <label for="answer_<%= answer.id %>"><%== answer.name %></label>
+            <label class="<%= answer.is_correct ? 'correct' : 'incorrect' %>" for="answer_<%= answer.id %>">
+              <%== answer.name %>
+            </label>
           </li>
         <% end %>
       </ol>

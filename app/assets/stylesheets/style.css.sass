@@ -22,6 +22,7 @@ body
 
 h1
   font-size: 18pt
+  margin-top: 0
 
 
 
@@ -56,13 +57,17 @@ input[type=text], textarea
 
 
 
-span
-  &.incorrect
-    color: red
-  &.correct
-    color: green
-  &:nth-child(3)
-    float: right
+
+form
+  &.answered
+    h1
+      color: #666
+    label.correct
+      color: #090
+      font-weight: bold
+    input:checked~label.incorrect
+      color: #900
+      font-weight: bold
 
 
 
