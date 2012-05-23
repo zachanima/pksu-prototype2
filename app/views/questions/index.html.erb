@@ -1,3 +1,5 @@
+<%= link_to 'Administration', topics_path %>
+
 <ul id="nav">
   <% @topics.each do |topic| %>
     <%= content_tag :li, class: (topic == @topic ? 'active' : nil) do %>
@@ -9,14 +11,14 @@
 <% @questions.each do |question| %>
   <div class="question">
     <form>
-      <h1><%= question.name %></h1>
+      <h1><%== question.name %></h1>
       <ol>
         <% question.answers.each do |answer| %>
           <li>
             <input
               id="answer_<%= answer.id %>"
               name="question_1"
-              type="radio">
+              type="<%= question.answers.correct.count > 1 ? 'checkbox' : 'radio' %>">
             <label class="<%= answer.is_correct ? 'correct' : 'incorrect' %>" for="answer_<%= answer.id %>">
               <%== answer.name %>
             </label>
@@ -33,3 +35,4 @@
 
   </div>
 <% end %>
+
