@@ -13,7 +13,8 @@
     <td>
       <%= link_to 'New question ...', new_topic_question_path(topic) %><br>
       <% topic.questions.each do |question| %>
-        <%= link_to question.name, edit_topic_question_path(topic, question), title: 'Edit question' %><br>
+        <%= link_to question.name, edit_topic_question_path(topic, question), title: 'Edit question' %>
+        (<%= link_to 'Delete', topic_question_path(topic, question), confirm: 'Are you sure you want to delete this question?', method: :delete %>)<br>
       <% end %>
       <!--
       <%= link_to "#{topic.questions.count} questions", topic_questions_path(topic), html: { title: 'Edit question' } %>

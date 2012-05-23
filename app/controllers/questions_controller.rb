@@ -50,6 +50,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
 
-    redirect_to questions_url
+    redirect_to topics_path
   end
 end
