@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
+  # Not used.
   def show
     @topic = Topic.find(params[:id])
   end

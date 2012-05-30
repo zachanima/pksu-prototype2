@@ -3,9 +3,7 @@
 one:
   name: MyString
   is_correct: false
-  question: 
 
 two:
   name: MyString
   is_correct: false
-  question: 
