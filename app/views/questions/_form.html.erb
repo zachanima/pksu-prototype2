@@ -14,10 +14,12 @@
     <fieldset>
       <legend>Answers</legend>
       <%= f.fields_for :answers, @question.answers do |a| %>
-        <%= a.label :name %>
-        <%= a.text_field :name %>
-        <%= a.check_box :is_correct %>
-        <%= a.label :is_correct %><br>
+        <p>
+          <%= a.label :name %>
+          <%= a.text_field :name %><br>
+          <%= a.check_box :is_correct %>
+          <%= a.label :is_correct %>
+        </p>
       <% end %>
     </fieldset>
   </div>
