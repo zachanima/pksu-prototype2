@@ -1,0 +1,20 @@
+# Running tests:
+
+.....FF..........
+
+Finished tests in 0.272386s, 62.4114 tests/s, 121.1515 assertions/s.
+
+1) Failure:
+test_should_not_create_question(QuestionsControllerTest) [/home/zach/ku/pksu/code/prototype2/test/functional/questions_controller_test.rb:4
+1]:
+"Question.count" didn't change by 0.
+<3> expected but was
+<4>.
+
+2) Failure:
+test_should_not_update_question(QuestionsControllerTest) [/home/zach/ku/pksu/code/prototype2/test/functional/questions_controller_test.rb:8
+1]:
+expecting <"edit"> but rendering with <"">
+
+17 tests, 33 assertions, 2 failures, 0 errors, 0 skips
+Errors running test:functionals! #<RuntimeError: Command failed with status (2): [/home/zach/.rvm/rubies/ruby-1.9.3-p194/bin...]>
