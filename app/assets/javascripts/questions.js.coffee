@@ -24,3 +24,6 @@ jQuery ->
     next = $(@).parents('.question').prev()
     next.slideDown 500
     return false
+
+  $('.question a').click ->
+    alert $(@).data('information')

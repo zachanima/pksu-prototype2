@@ -25,14 +25,13 @@
           </li>
         <% end %>
       </ol>
+      <% if not question.information.blank? %>
+        <a href="#" data-information="<%= question.information %>">
+          L&aelig;s mere
+        </a>
+      <% end %>
       <input type="submit" value="Svar" title="V&aelig;lg svar f&oslash;rst">
     </form>
-
-    <% if not question.information.blank? %>
-      <a href="#">L&aelig;s mere</a>
-      <div class="information"><%= question.information %></div>
-    <% end %>
-
   </div>
 <% end %>
 
